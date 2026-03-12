@@ -1,7 +1,7 @@
 import React from "react";
 import bgImg from "../assets/vector1.png";
 
-const Tickets = () => {
+const Tickets = ({btnProgress, resolved}) => {
   return (
     <div className="max-w-11/12 mx-auto">
       <div className="flex space-x-10 h-56">
@@ -16,7 +16,7 @@ const Tickets = () => {
         >
           <div className="text-white flex flex-col justify-center items-center gap-4">
             <h4 className="text-2xl">In-Progress</h4>
-            <h1 className="text-5xl font-bold">0</h1>
+            <h1 className="text-5xl font-bold">{btnProgress.length}</h1>
           </div>
         </div>
 
@@ -30,7 +30,7 @@ const Tickets = () => {
         >
           <div className="text-white flex flex-col justify-center items-center gap-4">
             <h4 className="text-2xl">Resolved</h4>
-            <h1 className="text-5xl font-bold">0</h1>
+            <h1 className="text-5xl font-bold">{resolved.length}</h1>
           </div>
         </div>
       </div>

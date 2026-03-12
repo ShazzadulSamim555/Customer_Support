@@ -5,7 +5,7 @@ const CustumerTickets = ({customer, btnProgress, setBtnProgress, handleProgress}
   
   return (
     <div onClick={()=>handleProgress(customer)}>
-      <div className="bg-white md:p-5 p-2 rounded-lg space-y-3">
+      <div className="bg-white md:p-5 p-2 rounded-lg space-y-3 shadow-xl">
         <div className="flex justify-between items-center">
           <h1 className="font-bold">{customer.title}</h1>
           <p>{customer.status}</p>

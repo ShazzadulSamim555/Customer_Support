@@ -3,6 +3,8 @@ import Navbar from "./Navbar";
 import Tickets from "./add/Tickets";
 import CustomerTck from "./add/CustomerTck";
 import Footer from "./add/Footer";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const [customers, setCustomers] = useState([]);
@@ -15,8 +17,9 @@ const App = () => {
 
     if (!isExist) {
       setBtnProgress([...btnProgress, addHandle]);
+      toast.success(`${addHandle.title} is added`)
     } else {
-      alert(`${addHandle.id} This Ticket is already progress.`);
+      toast.error(`ID: ${addHandle.id} is already in progress.`);
     }
   };
 
@@ -28,6 +31,8 @@ const App = () => {
       (item) => item.id !== resolve.id,
     );
     setBtnProgress(remainingProgress);
+
+    toast.success(`Complete ${resolve.id}`)
   };
   // console.log(resolved);
 
@@ -58,6 +63,12 @@ const App = () => {
         ></CustomerTck>
       </div>
       <Footer></Footer>
+
+      <ToastContainer 
+      position="top-center"
+      autoClose={2000}
+      
+      />
     </div>
   );
 };
